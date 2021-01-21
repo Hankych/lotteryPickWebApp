@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <!-- Name of Website -->
+        <title>拿坡里xCoca-Cola 抽獎結果 </title> 
+        <link rel = "stylesheet" href = "home.css"> 
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+        <!-- Library for require() in js -->
+        <script src = "https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+        
+        
+        <script src = "home.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBDtjZixXaW9NKXbRIZ_o1La74GgotDMt8",
+                authDomain: "lotterypickaurocore.firebaseapp.com",
+                databaseURL: "https://lotterypickaurocore.firebaseio.com",
+                projectId: "lotterypickaurocore",
+                storageBucket: "lotterypickaurocore.appspot.com",
+                messagingSenderId: "486337905913",
+                appId: "1:486337905913:web:f81d9fd6b4aa5d1850ce28",
+                measurementId: "G-M4QQNNND67"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            console.log(firebase);
+            firebase.analytics();
+        </script>
+
+        
+        
+        <script> var originalList =  Setup(); </script>
+
+ <!--   <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    </head> 
+    <body>
+
+        <button id = "btnResult" onclick = displayResult()>
+            查看抽獎結果
+        </button>
+
+        <div class = "container">
+
+            <div class = "table-responsive">
+                <h1> 拿坡里 x Coca-Cola 抽獎結果</h1>
+                <br />
+
+                <!-- Loading Symbol -->
+                <div class="loader" id = "loader"></div> 
+    
+                <table class = "table table-bordered table-striped" id = "lottery_table">
+                    <thread>
+                        <th>序號</th>
+                        <th>獎項</th>
+                        <th>獎品名稱</th>
+                        <th>發票號碼</th>
+                        <th>消費金額</th>
+                        <th>縣市</th>
+                        <th>區</th>
+                        <th>門市</th>
+                        <th>姓名</th>
+                        <th>電話</th>
+                        <th>電子郵件</th>
+                    </thread>
+                    <tbody id = "lottery_body"></tbody>
+                </table>
+            </div>
+        </div>
+    </body> 
+
+    <script> document.getElementById("loader").style.display = "none";  </script>
+    
+</html>
